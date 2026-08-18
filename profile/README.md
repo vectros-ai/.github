@@ -3,9 +3,23 @@
 **The secure data, document, search, and AI back-end you build apps on.**
 
 Vectros gives your application a typed data store, a document pipeline, hybrid
-search (BM25 + vector with RRF fusion), and citation-grounded retrieval — with
-multi-tenant isolation, scoped access keys, and an audited compliance posture,
+search (BM25 + vector with RRF fusion), and citation-grounded retrieval, with
+multi-tenant isolation, scoped access keys, and a tamper-evident audit trail,
 behind one coherent API.
+
+## A first call
+
+```ts
+import { VectrosClient } from "@vectros-ai/sdk";
+
+const client = new VectrosClient({
+  environment: "https://api.vectros.ai",
+  token: process.env.VECTROS_API_KEY!,
+});
+
+// Hybrid (keyword + semantic) search over your indexed content, with citations.
+const results = await client.search.content({ query: "annual leave policy" });
+```
 
 ## Get started
 
@@ -22,13 +36,22 @@ behind one coherent API.
 
 The full API surface is described in
 [vectros-api-spec](https://github.com/vectros-ai/vectros-api-spec) (OpenAPI).
+Agents can reach Vectros over MCP via
+[vectros-mcp-server](https://github.com/vectros-ai/vectros-mcp-server).
 
 ## What you can build
 
-- **Hybrid search** over your documents and structured records — keyword + vector, fused.
+- **Hybrid search** over your documents and structured records, keyword + vector, fused.
 - **Document ingestion** with schema-defined indexing, lookup/range queries, and folders.
-- **Grounded inference** — chat, RAG, and document-ask, answered with citations.
-- **Multi-tenant by design** — per-customer isolation, scoped keys, and app-contexts.
+- **Grounded inference**: chat, RAG, and document-ask, answered with citations.
+- **Multi-tenant by design**: per-customer isolation, scoped keys, and app-contexts.
+
+## Security & trust
+
+Per-customer fail-closed isolation, least-privilege scoped keys, and a tamper-evident
+audit and version history. Customer-facing surfaces are hardened through extensive
+adversarial security review. See the
+[compliance & trust guide](https://docs.vectros.ai/guides/operations-trust/compliance).
 
 ---
 
