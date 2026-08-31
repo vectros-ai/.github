@@ -46,6 +46,17 @@ Agents can reach Vectros over MCP via
 - **Grounded inference**: chat, RAG, and document-ask, answered with citations.
 - **Multi-tenant by design**: per-customer isolation, scoped keys, and app-contexts.
 
+## Reference apps
+
+Forkable, production-grade front-ends with no application server of their own. Clone one, wire
+your own identity provider and host, and see exactly how a real app talks to Vectros.
+
+| App | What it demonstrates | Repository |
+| --- | --- | --- |
+| HR case management | The flagship reference app: BYO-IdP sign-in (Auth0), org/case/client compartments, zero application backend, built to be forked as-is | [vectros-casework-spa](https://github.com/vectros-ai/vectros-casework-spa) |
+| Data workspace | Records, documents, hybrid search, an AI workspace over your own data | [vectros-app-vectros-ai](https://github.com/vectros-ai/vectros-app-vectros-ai) |
+| Admin | Members, API keys, roles and access profiles, activity logs, usage | [vectros-admin-app](https://github.com/vectros-ai/vectros-admin-app) |
+
 ## Security & trust
 
 Per-customer fail-closed isolation, least-privilege scoped keys, and a tamper-evident
