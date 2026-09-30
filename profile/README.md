@@ -44,11 +44,12 @@ Agents can reach Vectros over MCP via
 - **Hybrid search** over your documents and structured records, keyword + vector, fused.
 - **Document ingestion** with schema-defined indexing, lookup/range queries, and folders.
 - **Grounded inference**: chat, RAG, and document-ask, answered with citations.
-- **Multi-tenant by design**: per-customer isolation, scoped keys, and app-contexts.
+- **Isolated automatically**: each tenant, patient, or case is walled off from everyone else, with
+  scoped keys and app-contexts.
 
 ## Reference apps
 
-Forkable, production-grade front-ends with no application server of their own. Clone one, wire
+Forkable front-ends with no application server of their own. Clone one, wire
 your own identity provider and host, and see exactly how a real app talks to Vectros.
 
 | App | What it demonstrates | Repository |
@@ -59,9 +60,9 @@ your own identity provider and host, and see exactly how a real app talks to Vec
 
 ## Security & trust
 
-Per-customer fail-closed isolation, least-privilege scoped keys, and a tamper-evident
-audit and version history. Customer-facing surfaces are hardened through extensive
-adversarial security review. See the
+Isolation is on from day one: a lookup that can't prove it belongs there returns nothing, not
+everything. Access keys are least-privilege and scoped, and the audit and version history is
+tamper-evident. Customer-facing surfaces are hardened through extensive adversarial security review. See the
 [compliance & trust guide](https://docs.vectros.ai/guides/operations-trust/compliance).
 
 ---
