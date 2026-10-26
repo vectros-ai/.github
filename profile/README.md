@@ -3,8 +3,8 @@
 **The secure data, document, search, and AI back-end you build apps on.**
 
 Vectros gives your application a typed data store, a document pipeline, hybrid
-search (BM25 + vector with RRF fusion), and citation-grounded retrieval, with
-multi-tenant isolation, scoped access keys, and a tamper-evident audit trail,
+search (BM25 + vector with RRF fusion), and answers grounded in your own content,
+with multi-tenant isolation, scoped access keys, and a tamper-evident audit trail,
 behind one coherent API.
 
 ## A first call
@@ -17,7 +17,7 @@ const client = new VectrosClient({
   token: process.env.VECTROS_API_KEY!,
 });
 
-// Hybrid (keyword + semantic) search over your indexed content, with citations.
+// Hybrid (keyword + semantic) search over your indexed content.
 const results = await client.search.content({ query: "annual leave policy" });
 ```
 
@@ -43,7 +43,8 @@ Agents can reach Vectros over MCP via
 
 - **Hybrid search** over your documents and structured records, keyword + vector, fused.
 - **Document ingestion** with schema-defined indexing, lookup/range queries, and folders.
-- **Grounded inference**: chat, RAG, and document-ask, answered with citations.
+- **Grounded inference**: RAG and document-ask answer from your own content, and RAG streams the
+  sources it retrieved before the answer. Chat talks to the model directly.
 - **Isolated automatically**: each tenant, patient, or case is walled off from everyone else, with
   scoped keys and app-contexts.
 
